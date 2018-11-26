@@ -5,26 +5,26 @@ print "|a00 a01 a02|"
 print "|a10 a11 a12|"
 print "|a20 a21 a22|"
 #valores
-a00 = float(raw_input('Ingrese el valor a00 '))
-a01 = float(raw_input('Ingrese el valor a01 '))
-a02 = float(raw_input('Ingrese el valor a02 '))
-a10 = float(raw_input('Ingrese el valor a10 '))
-a11 = float(raw_input('Ingrese el valor a11 '))
-a12 = float(raw_input('Ingrese el valor a12 '))
-a20 = float(raw_input('Ingrese el valor a20 '))
-a21 = float(raw_input('Ingrese el valor a21 '))
-a22 = float(raw_input('Ingrese el valor a22 '))
+af1c1 = float(raw_input('Ingrese el valor a00 '))
+af1c2 = float(raw_input('Ingrese el valor a01 '))
+af1c3 = float(raw_input('Ingrese el valor a02 '))
+af2c1 = float(raw_input('Ingrese el valor a10 '))
+af2c2 = float(raw_input('Ingrese el valor a11 '))
+af2c3 = float(raw_input('Ingrese el valor a12 '))
+af3c1 = float(raw_input('Ingrese el valor a20 '))
+af3c2 = float(raw_input('Ingrese el valor a21 '))
+af3c3 = float(raw_input('Ingrese el valor a22 '))
 
 #operadores
-total=a00*a11*a22 + a10*a21*a02 +a20*a01*a12;
-total=total+(a02*a11*a20)*-1 + (a12*a21*a00)*-1 + (a22*a01*a10)*-1;
+total = af1c1*af2c2*af3c3 + af2c1*af3c2*af1c3 + af3c1*af1c2*af2c3;
+total = total + (af1c3*af2c2*af3c1)*-1 + (af2c3*af3c2*af1c1)*-1 + (af3c3*af1c2*af2c1)*-1;
 
 #si el determinante no es cero
 #existe inversa
 if total!=0:
-    print " ",(a11*a22-a21*a12)/total,' ',((a01*a22-a21*a02)*-1)/total,' ',(a01*a12-a11*a02)/total;
-    print " ",((a10*a22-a20*a12)*-1)/total,' ',((a00*a22-a20*a02))/total,' ',((a00*a12-a10*a02)*-1)/total;
-    print " ",((a10*a21-a20*a11))/total,' ',((a00*a21-a20*a01)*-1)/total,' ',(a00*a11-a10*a01)/total;
+    print " ",(af2c2*af3c3-af3c2*af2c3)/total,' ',((af1c2*af3c3-af3c2*af1c3)*-1)/total,' ',(af1c2*af2c3-af2c2*af1c3)/total;
+    print " ",((af2c1*af3c3-af3c1*af2c3)*-1)/total,' ',((af1c1*af3c3-af3c1*af1c3))/total,' ',((af1c1*af2c3-af2c1*af1c3)*-1)/total;
+    print " ",((af2c1*af3c2-af3c1*af2c2))/total,' ',((af1c1*af3c2-af3c1*af1c2)*-1)/total,' ',(af1c1*af2c2-af2c1*af1c2)/total;
 
 #DETERMINANTE 0
 else:
